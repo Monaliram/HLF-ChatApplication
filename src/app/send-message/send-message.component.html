@@ -1,0 +1,56 @@
+<div class="container1">
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Send Message.</h3>
+                        <form class="" [formGroup]="messageForm">
+                            <div class="col-md-12">
+                                <mat-form-field class="example-right-align">
+                                    <input matInput [formControlName]="'UserId'" class="example-right-align"
+                                        placeholder="User Id" style="color:black">
+                                    <mat-error *ngIf="messageForm.get('UserId')?.hasError('required')">
+                                        UserId Is Required
+                                    </mat-error>
+                                </mat-form-field><br><br>
+                            </div>
+                          
+                            <div class="col-md-6">
+                                <mat-form-field class="example-right-align">
+                                    <input matInput placeholder="AccessKey" [formControlName]="'AccessKey'"
+                                        readonly style="color:black">
+                                    <mat-error *ngIf="messageForm.get('AccessKey')?.hasError('required')">
+                                        AccessKey Is Required
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="example-right-align">
+                                    <input matInput placeholder="Recipient" [formControlName]="'recipient'"
+                                        readonly style="color:black">
+                                    <mat-error *ngIf="messageForm.get('recipient')?.hasError('required')">
+                                        Recipient Is Required
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="example-right-align">
+                                    <textarea matInput placeholder="Write your message" [formControlName]="'message'"
+                                         style="color:black">
+                                    </textarea>
+                                    <mat-error *ngIf="messageForm.get('message')?.hasError('required')">
+                                        Message Is Required
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary" class="btns">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
